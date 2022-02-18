@@ -1,0 +1,41 @@
+<style>
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 500px;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>
+
+
+<div class="content" role="main">
+ <div class="container">
+   <form class="jumbotron">
+       <h3 class="display-4">Verifica: GMAIL</h3>
+       <div class="form-group">
+         <label for="title">Email:</label>
+         <input name="title" #newtitle class="form-control">
+       </div>
+       <div class="form-group">
+        <label for="Object:">Object:</label>
+        <input name="Object:" #newObject class="form-control">
+      </div>
+       <div class="form-group">
+         <label for="link">Message:</label>
+         <input name="link" #newlink class="form-control w-100 p-3">
+       </div>
+       <br>
+       <button (click)="addArticle(newtitle, newlink, newObject)" class="btn btn-warning">
+        Invia
+      </button>
+    </form><br><br>
+    <div class="container">
+      <!-- start adding here -->
+      <app-sent-mail *ngFor="let art of sortedArticles()" [article]="art">
+      </app-sent-mail>
+     <!-- end adding here -->
+    </div>
+  </div>
+ </div>
