@@ -9,13 +9,10 @@ import { Email } from './sentMail.model'; //Non cancellare gli altri import
 export class SentMailComponent implements OnInit {
   @HostBinding('attr.class') cssClass = 'card mt-4';
   @Input() mail:Email = undefined!;
-  msg:String = '';
 
   ngOnInit() {}
 
-  clickE(){
-    this.msg = 'kiao';
-    return this.msg;
-      
+  Espen(): boolean{
+    return false;
   }
 }
