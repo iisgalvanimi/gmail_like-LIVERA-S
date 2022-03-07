@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Article } from './sent-mail/sentMail.model'; // <-- import this
+import { Email } from './sent-mail/sentMail.model'; // <-- import this
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,25 +7,20 @@ import { Article } from './sent-mail/sentMail.model'; // <-- import this
 })
 export class AppComponent {
   title = 'Email-Livera';
-  articles:Article[];   // <-- component property
+  emails:Email[];   // <-- component property
 
   constructor(){
-    this.articles = [];
+    this.emails = [];
   }
 
-  addArticle(title: HTMLInputElement, link: HTMLInputElement, object: HTMLInputElement): boolean {
-    /*this.articles.push(new Article('Angular 2', 'http://angular.io', 3));
-    return false;*/
-    console.log(`Adding article title: ${title.value} and link: ${link.value} and object: ${object.value}`);
-    this.articles.push(new Article(title.value, link.value, 0));
-    title.value = '';
-    link.value = '';
-    object.value = '';
+  addEmail(email: HTMLInputElement, subject: HTMLInputElement, message: HTMLInputElement): boolean {
+    this.emails.push(new Email(email.value, subject.value, message.value));
+    email.value = '';
+    subject.value = '';
+    message.value = '';
     return false;
 
   }
-  sortedArticles(): Article[] {
-    return this.articles.sort((a: Article, b: Article) => 0);
-  }
+  
 
 }

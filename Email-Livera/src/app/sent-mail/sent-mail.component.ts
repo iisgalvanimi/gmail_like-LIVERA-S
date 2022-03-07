@@ -1,5 +1,5 @@
 import { Component, OnInit, HostBinding, Input} from '@angular/core';
-import { Article } from './sentMail.model'; //Non cancellare gli altri import
+import { Email } from './sentMail.model'; //Non cancellare gli altri import
 
 @Component({
   selector: 'app-sent-mail',
@@ -8,13 +8,14 @@ import { Article } from './sentMail.model'; //Non cancellare gli altri import
 })
 export class SentMailComponent implements OnInit {
   @HostBinding('attr.class') cssClass = 'card mt-4';
-  @Input() article:Article;
-
-  constructor(){
-    this.article = new Article('Angular 2','http://angular.io',10);
-
-  }
+  @Input() mail:Email = undefined!;
+  msg:String = '';
 
   ngOnInit() {}
 
+  clickE(){
+    this.msg = 'kiao';
+    return this.msg;
+      
+  }
 }

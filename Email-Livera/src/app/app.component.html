@@ -15,26 +15,23 @@
    <form class="jumbotron">
        <h3 class="display-4">Verifica: GMAIL</h3>
        <div class="form-group">
-         <label for="title">Email:</label>
-         <input name="title" #newtitle class="form-control">
+         <label for="email">Email:</label>
+         <input name="email" #newEmail class="form-control">
        </div>
        <div class="form-group">
         <label for="Object:">Object:</label>
         <input name="Object:" #newObject class="form-control">
       </div>
        <div class="form-group">
-         <label for="link">Message:</label>
-         <input name="link" #newlink class="form-control w-100 p-3">
+         <label for="message">Message:</label>
+         <input name="message" #newMessage class="form-control w-100 p-3">
        </div>
        <br>
-       <button (click)="addArticle(newtitle, newlink, newObject)" class="btn btn-warning">
-        Invia
-      </button>
+      c
     </form><br><br>
     <div class="container">
       <!-- start adding here -->
-      <app-sent-mail *ngFor="let art of sortedArticles()" [article]="art">
-      </app-sent-mail>
+      <app-sent-mail *ngFor="let mail of emails" [mail]="mail"></app-sent-mail>
      <!-- end adding here -->
     </div>
   </div>
