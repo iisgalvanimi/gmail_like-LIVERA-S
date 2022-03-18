@@ -1,6 +1,9 @@
 <div class="card-body">
-  <h5>{{mail.object}} - {{mail.email}}</h5>
-   
-  <span class="badge badge-pill badge-info">{{mail.message} - CISOK</span>
-  <button href class="btn btn-warning float-end" (click)="Espen()" >Espandi</button>
+  <h5 [ngClass]="cssColor">{{mail.object}} - <ins>{{mail.email}}</ins></h5>
+  <hr>
+  <h5 *ngIf="show">{{mail.message}}</h5>
+  <button *ngIf="!show" class="btn btn-danger float-end" (click)="Espen()" >Espandi</button>
+  <button *ngIf="Speci" href class="btn btn-danger float-end mr-10000" (click)="Spec()" style="margin-left: 10px;">Speciale</button>
+  <button *ngIf="show" href class="btn btn-danger float-end margin-left" (click)="Espen()" >Chiudi</button>
+  
 </div>
